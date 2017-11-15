@@ -1,31 +1,19 @@
+# Instructions
+
+Note: To perform the instructions below make sure you run these commands (based on Ubuntu 14.04).
+
+```sudo apt-get install build-essential git cmake libboost1.55-all-dev```
+
 **1. Clone wallet sources**
 
 ```
-git clone https://github.com/cryptonotefoundation/cryptonotewallet.git
+git clone https://github.com/CEObrainz/otakoin-wallet.git
 ```
 
-**2. Modify `CryptoNoteWallet.cmake`**
- 
+**2. Set symbolic link to coin sources at the same level as `src`.**
 ```
-set(CN_PROJECT_NAME "furiouscoin")
-set(CN_CURRENCY_DISPLAY_NAME "FuriousCoin")
-set(CN_CURRENCY_TICKER "XFC")
+git submodule add https://github.com/CEObrainz/cryptonote-otakoin.git cryptonote
 ```
-
-**3. Set symbolic link to coin sources at the same level as `src`. For example:**
-
-```
-ln -s ../cryptonote cryptonote
-```
-
-Alternative way is to create git submodule:
-
-```
-git submodule add https://github.com/cryptonotefoundation/cryptonote.git cryptonote
-```
-
-Replace URL with git remote repository of your coin.
-
 **4. Build**
 
 ```
